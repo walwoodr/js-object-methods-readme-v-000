@@ -50,21 +50,21 @@ Let's make a few users:
 
 ```js
 
-carl = new User("Carl", "sparkles@aol.com");
+carl = new User("Sandra", "sparkles@aol.com");
 
 betsy = new User("Betsy", "betsy@flatironschool.com")
 
-george = new User("George", "george@me.com")
+george = new User("Hannah", "hannah@me.com")
 ```
 We can have the users greet us too:
 
 ```js
 carl.sayHello();
-// prints "Hello, my name is Carl" to the console
+// prints "Hello, my name is Sandra" to the console
 betsy.sayHello();
 // prints "Hello, my name is Betsy" to the console
 george.sayHello();
-// prints "Hello, my name is George" to the console
+// prints "Hello, my name is Hannah" to the console
 ```
 
 But there's a problem here. When build the method directly into the constructor function like this, we're using a lot of space in memory. Every single time a `User` object is created and stored in memory, the `sayHello` function is created and stored in memory with it. What if you're Facebook and have 1.19 billion active users a month? If you were to instantiate all those users at once, you'd be recreating that function in memory 1.19 billion times! (incidentally this is how Ruby does it)
@@ -83,7 +83,7 @@ User.prototype.sayHello = function(){
   console.log("Hello, my name is "+ this.name);
 }
 
-var sarah = new User("sarah", "sarah@aol.com");
+var sarah = new User("Sarah", "sarah@aol.com");
 
 sarah.sayHello();
 ```
@@ -153,7 +153,7 @@ class Teacher extends User {
     }
 }
 
-var t = new Teacher("Tom", "tom@geocities.edu")
+var t = new Teacher("Theresa", "theresa@geocities.edu")
 t.sayHello()
 ```
 
